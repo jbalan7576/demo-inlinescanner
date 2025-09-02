@@ -12,10 +12,8 @@ jobs:
 
          - name: Check out the repo
            uses: actions/checkout@v4
-		 
          - name: Build the docker image
            run: docker build . --file ./Dockerfile --tag inlinescanner-tag:v1.0
-         
          - uses: lacework/lw-scanner-action@v1.4.0
            name: Scan container image for vulnerabilities using Lacework
            with:
